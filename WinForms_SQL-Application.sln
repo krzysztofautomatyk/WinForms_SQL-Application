@@ -16,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{337C2FC4-E02
 		Gamespot.svg = Gamespot.svg
 		Gamespot.xaml = Gamespot.xaml
 		SQL_Tables.afdesign = SQL_Tables.afdesign
+		SQL_Tables.pdf = SQL_Tables.pdf
 		SQL_Tables.png = SQL_Tables.png
 	EndProjectSection
 EndProject
