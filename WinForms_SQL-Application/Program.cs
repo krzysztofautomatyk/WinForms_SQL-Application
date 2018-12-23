@@ -16,7 +16,7 @@ namespace WinForms_SQL_Application
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TournamentView());
+            Application.Run(new TorunamentDashboard());
         }
     }
 }
