@@ -37,7 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.placeNameValue = new System.Windows.Forms.TextBox();
             this.lastNameLabel = new System.Windows.Forms.Label();
-            this.firstNameValue = new System.Windows.Forms.TextBox();
+            this.placeNumberValue = new System.Windows.Forms.TextBox();
             this.PlaceNumberLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -57,6 +57,7 @@
             this.createPrizeButton.TabIndex = 57;
             this.createPrizeButton.Text = "Create Prize";
             this.createPrizeButton.UseVisualStyleBackColor = true;
+            this.createPrizeButton.Click += new System.EventHandler(this.createPrizeButton_Click);
             // 
             // createPrizeLabel
             // 
@@ -78,6 +79,7 @@
             this.prizePercentageValue.Name = "prizePercentageValue";
             this.prizePercentageValue.Size = new System.Drawing.Size(238, 36);
             this.prizePercentageValue.TabIndex = 65;
+            this.prizePercentageValue.Text = "0";
             // 
             // label3
             // 
@@ -99,6 +101,7 @@
             this.PrizeAmountValue.Name = "PrizeAmountValue";
             this.PrizeAmountValue.Size = new System.Drawing.Size(238, 36);
             this.PrizeAmountValue.TabIndex = 63;
+            this.PrizeAmountValue.Text = "0";
             // 
             // label2
             // 
@@ -133,14 +136,14 @@
             this.lastNameLabel.TabIndex = 62;
             this.lastNameLabel.Text = "Place Name";
             // 
-            // firstNameValue
+            // placeNumberValue
             // 
-            this.firstNameValue.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.firstNameValue.Location = new System.Drawing.Point(231, 70);
-            this.firstNameValue.Margin = new System.Windows.Forms.Padding(2);
-            this.firstNameValue.Name = "firstNameValue";
-            this.firstNameValue.Size = new System.Drawing.Size(238, 36);
-            this.firstNameValue.TabIndex = 59;
+            this.placeNumberValue.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.placeNumberValue.Location = new System.Drawing.Point(231, 70);
+            this.placeNumberValue.Margin = new System.Windows.Forms.Padding(2);
+            this.placeNumberValue.Name = "placeNumberValue";
+            this.placeNumberValue.Size = new System.Drawing.Size(238, 36);
+            this.placeNumberValue.TabIndex = 59;
             // 
             // PlaceNumberLabel
             // 
@@ -179,7 +182,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.placeNameValue);
             this.Controls.Add(this.lastNameLabel);
-            this.Controls.Add(this.firstNameValue);
+            this.Controls.Add(this.placeNumberValue);
             this.Controls.Add(this.PlaceNumberLabel);
             this.Controls.Add(this.createPrizeButton);
             this.Controls.Add(this.createPrizeLabel);
@@ -201,7 +204,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox placeNameValue;
         private System.Windows.Forms.Label lastNameLabel;
-        private System.Windows.Forms.TextBox firstNameValue;
+        private System.Windows.Forms.TextBox placeNumberValue;
         private System.Windows.Forms.Label PlaceNumberLabel;
         private System.Windows.Forms.Label label1;
     }

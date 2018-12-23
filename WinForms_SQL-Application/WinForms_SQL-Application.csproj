@@ -121,5 +121,11 @@
   <ItemGroup>
     <Content Include="Gamespot.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConnectionLibrary\ConnectionLibrary.csproj">
+      <Project>{910dec99-7804-4b51-a602-1d79381ef932}</Project>
+      <Name>ConnectionLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

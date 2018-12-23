@@ -16,7 +16,12 @@ namespace WinForms_SQL_Application
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TorunamentDashboard());
+
+            //Initialize the database connections
+            ConnectionLibrary.GlobalConfig.InitializeConnections(true, true);
+
+            //Application.Run(new TorunamentDashboard());
+            Application.Run(new CreatePrize());
         }
     }
 }
