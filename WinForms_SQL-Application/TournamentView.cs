@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace WinForms_SQL_Application
 {
-    public partial class Form1 : Form
+    public partial class TournamentView : Form
     {
-        public Form1()
+        public TournamentView()
         {
             InitializeComponent();
         }
+
+
     }
 }
