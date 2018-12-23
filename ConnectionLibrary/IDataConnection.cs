@@ -13,6 +13,6 @@ namespace ConnectionLibrary
         /// </summary>
         /// <param name="model"> Podaje poszczególne elementy z modelu ;)</param>
         /// <returns></returns>
-        PrizeModel CreatePrize(PrizeModel model);
+        Models.PrizeModel CreatePrize(Models.PrizeModel model);
     }
 }

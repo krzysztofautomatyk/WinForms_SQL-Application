@@ -1,4 +1,5 @@
 ﻿using ConnectionLibrary;
+using ConnectionLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +23,7 @@ namespace WinForms_SQL_Application
         {
             if (ValidateForm())
             {
-                PrizeModel model = new PrizeModel(
+                    PrizeModel model = new PrizeModel(
                     placeNameValue.Text,
                     placeNumberValue.Text,
                     PrizeAmountValue.Text,

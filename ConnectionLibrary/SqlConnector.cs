@@ -15,7 +15,7 @@ namespace ConnectionLibrary
         /// </summary>
         /// <param name="model">Informacje o kwocie</param>
         /// <returns>Informacje z kwotą przypisaną do unikalnego numeru id z bazy</returns>
-        public PrizeModel CreatePrize(PrizeModel model)
+        public Models.PrizeModel CreatePrize(Models.PrizeModel model)
         {
             model.id = 1;
             return model;

@@ -8,10 +8,12 @@ namespace ConnectionLibrary
 {
     public class TextConnection : IDataConnection
     {
-        public PrizeModel CreatePrize(PrizeModel model)
+        public Models.PrizeModel CreatePrize(Models.PrizeModel model)
         {
             model.id = 1;
             return model;
         }
+
+     
     }
 }

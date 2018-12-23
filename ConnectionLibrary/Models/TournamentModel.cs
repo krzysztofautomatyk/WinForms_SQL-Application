@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConnectionLibrary
+namespace ConnectionLibrary.Models
 {
     public class TournamentModel
     {
@@ -16,6 +16,6 @@ namespace ConnectionLibrary
 
         public List<PrizeModel> Prizes { get; set; } = new List<PrizeModel>();
 
-        public List<List<MatchupModel>> Rounds { get; set; } = new List<List<MatchupModel>>();
+        public List<List<Models.MatchupModel>> Rounds { get; set; } = new List<List<Models.MatchupModel>>();
     }
 }
