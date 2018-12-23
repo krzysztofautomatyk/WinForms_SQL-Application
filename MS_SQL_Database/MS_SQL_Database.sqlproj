@@ -59,6 +59,10 @@
     <Folder Include="Properties" />
     <Folder Include="dbo" />
     <Folder Include="dbo\Tables" />
+    <Folder Include="PublishLocation" />
+    <Folder Include="dbo\Views" />
+    <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="PostPublishScript" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\People.sql" />
@@ -70,8 +74,17 @@
     <Build Include="dbo\Tables\TournamentPrizes.sql" />
     <Build Include="dbo\Tables\Matchups.sql" />
     <Build Include="dbo\Tables\MatchupEntries.sql" />
+    <Build Include="dbo\Views\FullPeople.sql" />
+    <Build Include="dbo\Stored Procedures\spPeople_filter_by_lastName.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="MS_SQL_Database.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PublishLocation\Local_Demo_DB.publish.publish.xml" />
+    <None Include="PublishLocation\SQLEXPRESS_DB.publish.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="PostPublishScript\PostScript_Adds_perople_to_DB.sql" />
   </ItemGroup>
 </Project>
