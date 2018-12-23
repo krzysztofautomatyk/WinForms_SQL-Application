@@ -7,6 +7,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms_SQL-Application", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionLibrary", "ConnectionLibrary\ConnectionLibrary.csproj", "{910DEC99-7804-4B51-A602-1D79381EF932}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MS_SQL_Database", "MS_SQL_Database\MS_SQL_Database.sqlproj", "{C033B54F-E881-4E6E-A3A7-EA995D03EBC2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{337C2FC4-E02C-4C43-B968-F8D528218C49}"
+	ProjectSection(SolutionItems) = preProject
+		Gamespot.ico = Gamespot.ico
+		Gamespot.png = Gamespot.png
+		Gamespot.svg = Gamespot.svg
+		Gamespot.xaml = Gamespot.xaml
+		SQL_Tables.afdesign = SQL_Tables.afdesign
+		SQL_Tables.png = SQL_Tables.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +33,12 @@ Global
 		{910DEC99-7804-4B51-A602-1D79381EF932}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{910DEC99-7804-4B51-A602-1D79381EF932}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{910DEC99-7804-4B51-A602-1D79381EF932}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C033B54F-E881-4E6E-A3A7-EA995D03EBC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C033B54F-E881-4E6E-A3A7-EA995D03EBC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C033B54F-E881-4E6E-A3A7-EA995D03EBC2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C033B54F-E881-4E6E-A3A7-EA995D03EBC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C033B54F-E881-4E6E-A3A7-EA995D03EBC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C033B54F-E881-4E6E-A3A7-EA995D03EBC2}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
