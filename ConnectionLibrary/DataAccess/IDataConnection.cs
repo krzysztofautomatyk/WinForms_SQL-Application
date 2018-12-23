@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ConnectionLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConnectionLibrary
+namespace ConnectionLibrary.DataAccess
 {
     public interface IDataConnection
     {
@@ -13,6 +14,6 @@ namespace ConnectionLibrary
         /// </summary>
         /// <param name="model"> Podaje poszczególne elementy z modelu ;)</param>
         /// <returns></returns>
-        Models.PrizeModel CreatePrize(Models.PrizeModel model);
+        PrizeModel CreatePrize(PrizeModel model);
     }
 }
