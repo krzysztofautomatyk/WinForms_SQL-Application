@@ -30,16 +30,14 @@ namespace WinForms_SQL_Application
                     PrizeAmountValue.Text,
                     prizePercentageValue.Text);
 
-                foreach (IDataConnection db in GlobalConfig.Connections)
-                {
-                    db.CreatePrize(model);
 
-                }
+                    GlobalConfig.Connection.CreatePrize(model);
 
-                placeNameValue.Text = "";
-                placeNumberValue.Text = "";
-                PrizeAmountValue.Text = "0";
-                prizePercentageValue.Text = "0";
+                
+                    placeNameValue.Text = "";
+                    placeNumberValue.Text = "";
+                    PrizeAmountValue.Text = "0";
+                    prizePercentageValue.Text = "0";
 
 
             }

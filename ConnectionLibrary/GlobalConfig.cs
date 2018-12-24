@@ -10,26 +10,27 @@ namespace ConnectionLibrary
 {
     public static class GlobalConfig
     {
-        public static List<IDataConnection> Connections { get; private set; } = new List<IDataConnection>();
+        public static IDataConnection Connection { get; private set; }
 
         /// <summary>
         /// Ustawiamy komunikacje naszej aplikacji z bazą danych i/lub systemem plików
         /// </summary>
         /// <param name="database">Jeśli chcesz używać bazy danych -> True</param>
         /// <param name="textFiles">Jeśli chcesz używać systemu plików ->True</param>
-        public static void InitializeConnections ( bool database , bool textFiles)
+        public static void InitializeConnections (DatabaseType connectionType)
         {
-            if (database)
+          
+            if (connectionType== DatabaseType.Sql)
             {
                 //TODO - coś trzeba tu dopisać
                 SqlConnector sql = new SqlConnector();
-                Connections.Add(sql);
+                Connection = sql;
             }
 
-            if (textFiles)
+            else if (connectionType==DatabaseType.TextFile)
             {
                 TextConnector text = new TextConnector();
-                Connections.Add(text);
+                Connection = text;
                 ///TODO - coś dodaj
             }
         }

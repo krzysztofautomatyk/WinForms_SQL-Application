@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConnectionLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace WinForms_SQL_Application
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Initialize the database connections
-            ConnectionLibrary.GlobalConfig.InitializeConnections(true, true);
+            ConnectionLibrary.GlobalConfig.InitializeConnections(DatabaseType.Sql);
 
             //Application.Run(new TorunamentDashboard());
             Application.Run(new CreatePrize());
