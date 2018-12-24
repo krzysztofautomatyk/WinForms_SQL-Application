@@ -10,10 +10,15 @@ namespace ConnectionLibrary.DataAccess
     {
         public Models.PrizeModel CreatePrize(Models.PrizeModel model)
         {
-            model.id = 1;
-            return model;
+            // Wczytaj plik
+            // Przekonwertuj the text to List<PrizeModel>
+            // Znajdź id
+            // Dodadaj nowy rekord zgodnie z modelem List<PrizeModel>
+            // Przekonwertuj model na stringa
+            // Zapisz plik
+
         }
 
-     
+
     }
 }
