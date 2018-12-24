@@ -37,14 +37,14 @@
             this.tournamentNameLabel = new System.Windows.Forms.Label();
             this.createTeamLabel = new System.Windows.Forms.Label();
             this.addNewMemberGroupBox = new System.Windows.Forms.GroupBox();
-            this.firstNameLabel = new System.Windows.Forms.Label();
-            this.firstNameValue = new System.Windows.Forms.TextBox();
-            this.lastNameValue = new System.Windows.Forms.TextBox();
-            this.lastNameLabel = new System.Windows.Forms.Label();
-            this.emailValue = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.cellphoneValue = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.emailValue = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lastNameValue = new System.Windows.Forms.TextBox();
+            this.lastNameLabel = new System.Windows.Forms.Label();
+            this.firstNameValue = new System.Windows.Forms.TextBox();
+            this.firstNameLabel = new System.Windows.Forms.Label();
             this.createTeamButton = new System.Windows.Forms.Button();
             this.deleteSelectedTeamMembersButton = new System.Windows.Forms.Button();
             this.teamMembersListtBox = new System.Windows.Forms.ListBox();
@@ -66,6 +66,7 @@
             this.createMemberButton.TabIndex = 45;
             this.createMemberButton.Text = "Create Member";
             this.createMemberButton.UseVisualStyleBackColor = true;
+            this.createMemberButton.Click += new System.EventHandler(this.createMemberButton_Click);
             // 
             // addMemberButton
             // 
@@ -159,47 +160,26 @@
             this.addNewMemberGroupBox.TabStop = false;
             this.addNewMemberGroupBox.Text = "Add New Member";
             // 
-            // firstNameLabel
+            // cellphoneValue
             // 
-            this.firstNameLabel.AutoSize = true;
-            this.firstNameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.firstNameLabel.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.firstNameLabel.Location = new System.Drawing.Point(18, 35);
-            this.firstNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.firstNameLabel.Name = "firstNameLabel";
-            this.firstNameLabel.Size = new System.Drawing.Size(150, 37);
-            this.firstNameLabel.TabIndex = 47;
-            this.firstNameLabel.Text = "First Name";
+            this.cellphoneValue.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cellphoneValue.Location = new System.Drawing.Point(171, 181);
+            this.cellphoneValue.Margin = new System.Windows.Forms.Padding(2);
+            this.cellphoneValue.Name = "cellphoneValue";
+            this.cellphoneValue.Size = new System.Drawing.Size(238, 36);
+            this.cellphoneValue.TabIndex = 52;
             // 
-            // firstNameValue
+            // label3
             // 
-            this.firstNameValue.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.firstNameValue.Location = new System.Drawing.Point(170, 37);
-            this.firstNameValue.Margin = new System.Windows.Forms.Padding(2);
-            this.firstNameValue.Name = "firstNameValue";
-            this.firstNameValue.Size = new System.Drawing.Size(238, 36);
-            this.firstNameValue.TabIndex = 47;
-            // 
-            // lastNameValue
-            // 
-            this.lastNameValue.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lastNameValue.Location = new System.Drawing.Point(171, 85);
-            this.lastNameValue.Margin = new System.Windows.Forms.Padding(2);
-            this.lastNameValue.Name = "lastNameValue";
-            this.lastNameValue.Size = new System.Drawing.Size(238, 36);
-            this.lastNameValue.TabIndex = 48;
-            // 
-            // lastNameLabel
-            // 
-            this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lastNameLabel.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lastNameLabel.Location = new System.Drawing.Point(19, 83);
-            this.lastNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(146, 37);
-            this.lastNameLabel.TabIndex = 49;
-            this.lastNameLabel.Text = "Last Name";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.label3.Location = new System.Drawing.Point(19, 179);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(140, 37);
+            this.label3.TabIndex = 53;
+            this.label3.Text = "Cellphone";
             // 
             // emailValue
             // 
@@ -222,26 +202,47 @@
             this.label2.TabIndex = 51;
             this.label2.Text = "Email";
             // 
-            // cellphoneValue
+            // lastNameValue
             // 
-            this.cellphoneValue.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cellphoneValue.Location = new System.Drawing.Point(171, 181);
-            this.cellphoneValue.Margin = new System.Windows.Forms.Padding(2);
-            this.cellphoneValue.Name = "cellphoneValue";
-            this.cellphoneValue.Size = new System.Drawing.Size(238, 36);
-            this.cellphoneValue.TabIndex = 52;
+            this.lastNameValue.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lastNameValue.Location = new System.Drawing.Point(171, 85);
+            this.lastNameValue.Margin = new System.Windows.Forms.Padding(2);
+            this.lastNameValue.Name = "lastNameValue";
+            this.lastNameValue.Size = new System.Drawing.Size(238, 36);
+            this.lastNameValue.TabIndex = 48;
             // 
-            // label3
+            // lastNameLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label3.Location = new System.Drawing.Point(19, 179);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 37);
-            this.label3.TabIndex = 53;
-            this.label3.Text = "Cellphone";
+            this.lastNameLabel.AutoSize = true;
+            this.lastNameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lastNameLabel.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lastNameLabel.Location = new System.Drawing.Point(19, 83);
+            this.lastNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lastNameLabel.Name = "lastNameLabel";
+            this.lastNameLabel.Size = new System.Drawing.Size(146, 37);
+            this.lastNameLabel.TabIndex = 49;
+            this.lastNameLabel.Text = "Last Name";
+            // 
+            // firstNameValue
+            // 
+            this.firstNameValue.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.firstNameValue.Location = new System.Drawing.Point(170, 37);
+            this.firstNameValue.Margin = new System.Windows.Forms.Padding(2);
+            this.firstNameValue.Name = "firstNameValue";
+            this.firstNameValue.Size = new System.Drawing.Size(238, 36);
+            this.firstNameValue.TabIndex = 47;
+            // 
+            // firstNameLabel
+            // 
+            this.firstNameLabel.AutoSize = true;
+            this.firstNameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.firstNameLabel.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.firstNameLabel.Location = new System.Drawing.Point(18, 35);
+            this.firstNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.firstNameLabel.Name = "firstNameLabel";
+            this.firstNameLabel.Size = new System.Drawing.Size(150, 37);
+            this.firstNameLabel.TabIndex = 47;
+            this.firstNameLabel.Text = "First Name";
             // 
             // createTeamButton
             // 

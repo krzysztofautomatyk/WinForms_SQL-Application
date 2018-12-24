@@ -12,6 +12,23 @@ namespace ConnectionLibrary.DataAccess
 
     public class SqlConnector : IDataConnection
     {
+        public PersonModel CreatePerson(PersonModel model)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("turnaments")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@FirstName", model.FirstName);
+                p.Add("@LastName", model.LastName);
+                p.Add("@EmailAddress", model.EmailAddress);
+                p.Add("@CellPhoneNumber", model.CellPhoneNumber);
+                p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                // Insert/update/exeute
+                connection.Execute("dbo.spPeople_Insert", p, commandType: CommandType.StoredProcedure);
+                model.id = p.Get<int>("@id");
+                return model;
+            }
+        }
         //TODO - dorób metode zachowującą kwotę w bazie danych
         /// <summary>
         /// Zapisuje nową kwotę w bazie danych

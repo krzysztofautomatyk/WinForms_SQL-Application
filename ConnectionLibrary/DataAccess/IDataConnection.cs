@@ -15,5 +15,7 @@ namespace ConnectionLibrary.DataAccess
         /// <param name="model"> Podaje poszczególne elementy z modelu ;)</param>
         /// <returns></returns>
         PrizeModel CreatePrize(PrizeModel model);
+
+        PersonModel CreatePerson(PersonModel model);
     }
 }

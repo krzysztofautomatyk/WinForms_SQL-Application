@@ -12,6 +12,11 @@ namespace ConnectionLibrary.DataAccess
     {
         private const string PrizeFile = "PrizeModel.csv";
 
+        public PersonModel CreatePerson(PersonModel model)
+        {
+            throw new NotImplementedException();
+        }
+
         public PrizeModel CreatePrize(PrizeModel model)
         {
             // Wczytaj plik

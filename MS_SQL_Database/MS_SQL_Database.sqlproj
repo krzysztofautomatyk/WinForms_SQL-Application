@@ -77,6 +77,7 @@
     <Build Include="dbo\Views\FullPeople.sql" />
     <Build Include="dbo\Stored Procedures\spPeople_filter_by_lastName.sql" />
     <Build Include="dbo\Stored Procedures\spPrizes_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\spPeople_Insert.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="MS_SQL_Database.refactorlog" />
