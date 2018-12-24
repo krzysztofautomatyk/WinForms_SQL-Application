@@ -22,7 +22,7 @@ namespace WinForms_SQL_Application
             ConnectionLibrary.GlobalConfig.InitializeConnections(DatabaseType.TextFile);
 
             //Application.Run(new TorunamentDashboard());
-            Application.Run(new CreatePrize());
+            Application.Run(new CreateTeam());
         }
     }
 }

@@ -31,6 +31,12 @@ namespace WinForms_SQL_Application
                 p.CellPhoneNumber = cellphoneValue.Text;
 
                 GlobalConfig.Connection.CreatePerson(p);
+
+                firstNameValue.Text = "";
+                lastNameValue.Text = "";
+                emailValue.Text = "";
+                cellphoneValue.Text = "";
+
             }
             else
             {

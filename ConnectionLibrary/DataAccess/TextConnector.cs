@@ -11,10 +11,26 @@ namespace ConnectionLibrary.DataAccess
     public class TextConnector : IDataConnection
     {
         private const string PrizeFile = "PrizeModel.csv";
+        private const string PeopleFile = "PersonModel.csv"; 
 
         public PersonModel CreatePerson(PersonModel model)
         {
-            throw new NotImplementedException();
+            List<PersonModel> people = PeopleFile.FullFilePath().LoadFile().ConvertToPersonModel(); ;
+
+            //Znajdź najwyższe id i dodaj do niego 1
+            int currenId = 1;
+            if (people.Count > 0)
+            {
+                currenId = people.OrderByDescending(x => x.id).First().id + 1;
+            }
+
+            model.id = currenId;
+
+            people.Add(model);
+
+            people.SaveToPeopleFile(PeopleFile);
+
+            return model;
         }
 
         public PrizeModel CreatePrize(PrizeModel model)
