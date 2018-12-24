@@ -1,6 +1,7 @@
 ﻿using ConnectionLibrary.DataAccess;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,15 @@ namespace ConnectionLibrary
                 Connections.Add(text);
                 ///TODO - coś dodaj
             }
+        }
+        /// <summary>
+        /// Metoda odczyta stringa z App.config odnośnie połączenia z bazą danych
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public static string CnnString(string name)
+        {
+            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
     }
 }
