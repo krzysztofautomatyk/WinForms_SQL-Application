@@ -7,7 +7,7 @@ using System.Configuration;
 using System.IO;
 using ConnectionLibrary.Models;
 
-namespace ConnectionLibrary.DataAccess.TextConnector
+namespace ConnectionLibrary.DataAccess.TextHelpers
 {
     public static class TextConnectorProcessor
     {
@@ -15,7 +15,7 @@ namespace ConnectionLibrary.DataAccess.TextConnector
         public static string FullFilePath(this string fileName) // PrizeModel.csv
         {
             // D:\PrizeModel.csv
-            return $"{ConfigurationManager.AppSettings["filePath"]}\\{ fileName}}";
+            return $"{ConfigurationManager.AppSettings["filePath"]}\\{ fileName}";
         }
 
         // Otwórz plik
@@ -47,6 +47,19 @@ namespace ConnectionLibrary.DataAccess.TextConnector
             }
 
             return output;
+        }
+
+        public static void SaveToPrizeFile(this List<PrizeModel> models, string fileName   )
+        {
+            List<string> lines = new List<string>();
+
+            foreach (PrizeModel p in models)
+            {
+                lines.Add($"{ p.id },{ p.PlaceNumber },{ p.PlaceName },{ p.PrizeAmount },{ p.PrizePercentage }");
+
+            }
+
+            File.WriteAllLines(fileName.FullFilePath(), lines);
         }
 
     }
