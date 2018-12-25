@@ -64,6 +64,10 @@ namespace WinForms_SQL_Application
                 p.CellPhoneNumber = cellphoneValue.Text;
 
                 GlobalConfig.Connection.CreatePerson(p);
+                
+                // dodaje nowa osobę i odświeżam liste
+                selectedTeamMeambers.Add(p);
+                WireUpList();
 
                 firstNameValue.Text = "";
                 lastNameValue.Text = "";
@@ -114,12 +118,32 @@ namespace WinForms_SQL_Application
         {
             
             PersonModel p = (PersonModel)selectTeamMemberDropDown.SelectedItem;
+            if (p != null)
+            {
+                availbleTeamMeambers.Remove(p);
+                selectedTeamMeambers.Add(p);
+
+                WireUpList();
+            }
+        }
+
+
+        /// <summary>
+        /// Przycisk usuwa dane z listy i dodaje je z powrotem do ComboBoxa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void removeSelectedTeamMembersButton_Click(object sender, EventArgs e)
+        {
+            PersonModel p = (PersonModel)teamMembersListtBox.SelectedItem;
+            if (p !=null)
+            {
+                selectedTeamMeambers.Remove(p);
+                availbleTeamMeambers.Add(p);
+
+                WireUpList();
+            }
             
-            availbleTeamMeambers.Remove(p);
-            selectedTeamMeambers.Add(p);
-
-            WireUpList();
-
         }
     }
 }
