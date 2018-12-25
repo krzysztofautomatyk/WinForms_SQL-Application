@@ -14,6 +14,9 @@ namespace WinForms_SQL_Application
 {
     public partial class CreateTeam : Form
     {
+        private List<PersonModel> availbleTeamMeambers = new List<PersonModel>();
+        private List<PersonModel> selectedTeamMeambers = new List<PersonModel>();
+
         public CreateTeam()
         {
             InitializeComponent();
@@ -64,6 +67,11 @@ namespace WinForms_SQL_Application
             }
 
             return true;
+        }
+
+        private void CreateTeam_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
