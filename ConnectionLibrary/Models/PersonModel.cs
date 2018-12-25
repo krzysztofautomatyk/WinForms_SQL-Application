@@ -28,5 +28,16 @@ namespace ConnectionLibrary.Models
         /// Telefon kontaktowy
         /// </summary>
         public string CellPhoneNumber { get; set; }
+
+        /// <summary>
+        /// Zwaraca nam jako jedno Imię i nazwisko :)
+        /// </summary>
+        public string FullName
+        {
+            get
+            {
+                return $"{ FirstName } { LastName }";
+            }
+        }
     }
 }

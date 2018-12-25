@@ -17,5 +17,8 @@ namespace ConnectionLibrary.DataAccess
         PrizeModel CreatePrize(PrizeModel model);
 
         PersonModel CreatePerson(PersonModel model);
+
+        //Pobieranie danych do list 
+        List<PersonModel> GetPerson_All();
     }
 }

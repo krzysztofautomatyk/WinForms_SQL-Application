@@ -64,5 +64,15 @@ namespace ConnectionLibrary.DataAccess
 
             }
         }
+
+        public List<PersonModel> GetPerson_All()
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("turnaments")))
+            {
+            }
+
+            
+              
+        }
     }
 }

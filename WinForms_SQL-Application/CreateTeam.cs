@@ -20,6 +20,29 @@ namespace WinForms_SQL_Application
         public CreateTeam()
         {
             InitializeComponent();
+
+            //CreateSimpleDemoData();
+
+            WireUpList();
+        }
+
+        private void CreateSimpleDemoData()
+        {
+            availbleTeamMeambers.Add(new PersonModel { FirstName = "Kris", LastName = "Nowak" });
+            availbleTeamMeambers.Add(new PersonModel { FirstName = "Super", LastName = "Kris" });
+            availbleTeamMeambers.Add(new PersonModel { FirstName = "Tim", LastName = "Smith" });
+
+            selectedTeamMeambers.Add(new PersonModel { FirstName = "Anna", LastName = "Nowak" });
+            selectedTeamMeambers.Add(new PersonModel { FirstName = "Jan", LastName = "Kowalski" });
+        }
+
+        private void WireUpList()
+        {
+            selectTeamMemberDropDown.DataSource = availbleTeamMeambers;
+            selectTeamMemberDropDown.DisplayMember = "FullName";
+
+            teamMembersListtBox.DataSource = selectedTeamMeambers;
+            teamMembersListtBox.DisplayMember = "FullName";
         }
 
         private void createMemberButton_Click(object sender, EventArgs e)
