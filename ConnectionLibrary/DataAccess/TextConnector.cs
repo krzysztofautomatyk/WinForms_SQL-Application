@@ -61,6 +61,9 @@ namespace ConnectionLibrary.DataAccess
 
         }
 
-
+        public List<PersonModel> GetPerson_All()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -12,9 +12,13 @@ namespace ConnectionLibrary.DataAccess
 
     public class SqlConnector : IDataConnection
     {
+        /// <summary>
+        /// Nazwa bazy danych z którą się łącze
+        /// </summary>
+        private const string db = "turnaments";
         public PersonModel CreatePerson(PersonModel model)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("turnaments")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@FirstName", model.FirstName);
@@ -37,7 +41,7 @@ namespace ConnectionLibrary.DataAccess
         /// <returns>Informacje z kwotą przypisaną do unikalnego numeru id z bazy</returns>
         public PrizeModel CreatePrize(PrizeModel model)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("turnaments")))
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 //var output = connection.Query<Person>($"select * from People where LastName = '{ lastName }'").ToList();
                 //var output = connection.Query<Person>("dbo.People_GetByLastName @LastName", new { LastName = lastName }).ToList();
@@ -67,9 +71,15 @@ namespace ConnectionLibrary.DataAccess
 
         public List<PersonModel> GetPerson_All()
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("turnaments")))
+            List<PersonModel> output;
+
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
+                // pobiera dane z tabeli w formie listy jako model PersonModel :) 
+                output = connection.Query<PersonModel>("dbo.spPeople_GetAll").ToList();
+
             }
+            return output;
 
             
               

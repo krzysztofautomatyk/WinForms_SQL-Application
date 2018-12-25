@@ -14,7 +14,7 @@ namespace WinForms_SQL_Application
 {
     public partial class CreateTeam : Form
     {
-        private List<PersonModel> availbleTeamMeambers = new List<PersonModel>();
+        private List<PersonModel> availbleTeamMeambers = GlobalConfig.Connection.GetPerson_All();
         private List<PersonModel> selectedTeamMeambers = new List<PersonModel>();
 
         public CreateTeam()
@@ -26,6 +26,8 @@ namespace WinForms_SQL_Application
             WireUpList();
         }
 
+
+        #region CreateSimpleDemoDate
         private void CreateSimpleDemoData()
         {
             availbleTeamMeambers.Add(new PersonModel { FirstName = "Kris", LastName = "Nowak" });
@@ -35,11 +37,16 @@ namespace WinForms_SQL_Application
             selectedTeamMeambers.Add(new PersonModel { FirstName = "Anna", LastName = "Nowak" });
             selectedTeamMeambers.Add(new PersonModel { FirstName = "Jan", LastName = "Kowalski" });
         }
+        #endregion
 
         private void WireUpList()
         {
+            selectTeamMemberDropDown.DataSource = null;
+
             selectTeamMemberDropDown.DataSource = availbleTeamMeambers;
             selectTeamMemberDropDown.DisplayMember = "FullName";
+
+            teamMembersListtBox.DataSource = null;
 
             teamMembersListtBox.DataSource = selectedTeamMeambers;
             teamMembersListtBox.DisplayMember = "FullName";
@@ -94,6 +101,24 @@ namespace WinForms_SQL_Application
 
         private void CreateTeam_Load(object sender, EventArgs e)
         {
+
+        }
+
+
+        /// <summary>
+        /// Metoda przenosi wybrany element z ComboBoxa do listboxa  
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void addMemberButton_Click(object sender, EventArgs e)
+        {
+            
+            PersonModel p = (PersonModel)selectTeamMemberDropDown.SelectedItem;
+            
+            availbleTeamMeambers.Remove(p);
+            selectedTeamMeambers.Add(p);
+
+            WireUpList();
 
         }
     }

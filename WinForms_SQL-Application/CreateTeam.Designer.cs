@@ -76,7 +76,7 @@
             this.addMemberButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addMemberButton.Font = new System.Drawing.Font("Segoe UI Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.addMemberButton.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.addMemberButton.Location = new System.Drawing.Point(65, 236);
+            this.addMemberButton.Location = new System.Drawing.Point(128, 239);
             this.addMemberButton.Margin = new System.Windows.Forms.Padding(2);
             this.addMemberButton.Name = "addMemberButton";
             this.addMemberButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -84,6 +84,7 @@
             this.addMemberButton.TabIndex = 43;
             this.addMemberButton.Text = "Add Member";
             this.addMemberButton.UseVisualStyleBackColor = true;
+            this.addMemberButton.Click += new System.EventHandler(this.addMemberButton_Click);
             // 
             // selectTeamMemberLabel
             // 
@@ -103,7 +104,7 @@
             this.TeamNameValue.Location = new System.Drawing.Point(19, 99);
             this.TeamNameValue.Margin = new System.Windows.Forms.Padding(2);
             this.TeamNameValue.Name = "TeamNameValue";
-            this.TeamNameValue.Size = new System.Drawing.Size(314, 36);
+            this.TeamNameValue.Size = new System.Drawing.Size(408, 36);
             this.TeamNameValue.TabIndex = 40;
             // 
             // selectTeamMemberDropDown
@@ -113,7 +114,7 @@
             this.selectTeamMemberDropDown.Location = new System.Drawing.Point(19, 179);
             this.selectTeamMemberDropDown.Margin = new System.Windows.Forms.Padding(2);
             this.selectTeamMemberDropDown.Name = "selectTeamMemberDropDown";
-            this.selectTeamMemberDropDown.Size = new System.Drawing.Size(314, 38);
+            this.selectTeamMemberDropDown.Size = new System.Drawing.Size(408, 38);
             this.selectTeamMemberDropDown.TabIndex = 38;
             // 
             // tournamentNameLabel
