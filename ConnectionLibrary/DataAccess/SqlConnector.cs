@@ -78,7 +78,7 @@ namespace ConnectionLibrary.DataAccess
                 p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
                 // Insert/update/exeute
-                connection.Execute("dbo.spTeam_Insert", p, commandType: CommandType.StoredProcedure);
+                connection.Execute("dbo.spTeams_Insert", p, commandType: CommandType.StoredProcedure);
                 model.Id = p.Get<int>("@id");
 
                 foreach (PersonModel tm in model.TeamMembers)

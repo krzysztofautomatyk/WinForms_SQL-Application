@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[spTeam_Insert]
+﻿CREATE PROCEDURE [dbo].[spTeams_Insert]
 	@TeamName NVARCHAR(100),	
 	@id int=0 output
 
