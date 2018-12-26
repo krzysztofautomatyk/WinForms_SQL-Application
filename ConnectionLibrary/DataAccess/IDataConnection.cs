@@ -18,6 +18,9 @@ namespace ConnectionLibrary.DataAccess
 
         PersonModel CreatePerson(PersonModel model);
 
+        // Twprzenie modelu drużyny
+        TeamModel CreateTeam(TeamModel model);
+
         //Pobieranie danych do list 
         List<PersonModel> GetPerson_All();
     }
