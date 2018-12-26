@@ -11,7 +11,8 @@ namespace ConnectionLibrary.DataAccess
     public class TextConnector : IDataConnection
     {
         private const string PrizeFile = "PrizeModel.csv";
-        private const string PeopleFile = "PersonModel.csv"; 
+        private const string PeopleFile = "PersonModel.csv";
+        private const string TeamFile = "TeamModel.csv";
 
         public PersonModel CreatePerson(PersonModel model)
         {
@@ -42,7 +43,7 @@ namespace ConnectionLibrary.DataAccess
             // Przekonwertuj model na stringa
             // Zapisz plik
             
-            List<PrizeModel> prizes = PrizeFile.FullFilePath().LoadFile().ConvertToPrizeModel(); ;
+            List<PrizeModel> prizes = PrizeFile.FullFilePath().LoadFile().ConvertToPrizeModel(); 
 
             //Znajdź najwyższe id i dodaj do niego 1
             int currenId = 1;
@@ -63,7 +64,21 @@ namespace ConnectionLibrary.DataAccess
 
         public TeamModel CreateTeam(TeamModel model)
         {
-            throw new NotImplementedException();
+            List<TeamModel> teams = TeamFile.FullFilePath().LoadFile().ConvertToTeamModel(PeopleFile);
+
+            int currenId = 1;
+            if (teams.Count > 0)
+            {
+                currenId = teams.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+
+            model.Id = currenId;
+
+            teams.Add(model);
+
+            teams.SaveToTeamFile(TeamFile);
+
+            return model;
         }
 
         public List<PersonModel> GetPerson_All()

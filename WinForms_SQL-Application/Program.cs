@@ -19,7 +19,7 @@ namespace WinForms_SQL_Application
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Initialize the database connections
-            ConnectionLibrary.GlobalConfig.InitializeConnections(DatabaseType.Sql);
+            ConnectionLibrary.GlobalConfig.InitializeConnections(DatabaseType.TextFile);
 
             //Application.Run(new TorunamentDashboard());
             Application.Run(new CreateTeam());

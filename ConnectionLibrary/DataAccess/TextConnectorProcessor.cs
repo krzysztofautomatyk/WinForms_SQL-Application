@@ -98,5 +98,69 @@ namespace ConnectionLibrary.DataAccess.TextHelpers
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }
 
+        public static List<TeamModel> ConvertToTeamModel(this List<string> lines , string peopleFileName)
+        {
+            List<TeamModel> output = new List<TeamModel>();
+            List<PersonModel> people = peopleFileName.FullFilePath().LoadFile().ConvertToPersonModel();
+
+            foreach (string line in lines)
+            {
+                string[] cols = line.Split(',');
+
+                TeamModel t = new TeamModel();
+                t.Id = int.Parse(cols[0]);
+                t.TeamName = cols[1];
+
+                string[] personIds = cols[2].Split('|');
+
+                foreach (string id in personIds)
+                {
+                    //powinno znaleźć tylko jedną osobę
+                    t.TeamMembers.Add(people.Where(x => x.id == int.Parse(id)).First());
+                }
+
+                //    p.PlaceName = cols[2];
+                //    p.PrizeAmount = decimal.Parse(cols[3]);
+                //    p.PrizePercentage = double.Parse(cols[4]);
+                //    output.Add(p);
+            }
+
+            return output;
+        }
+
+        public static void SaveToTeamFile(this List<TeamModel> models, string fileName)
+        {
+            List<string> lines = new List<string>();
+
+            foreach (TeamModel t in models)
+            {
+                lines.Add($"{ t.Id },{ t.TeamName },{ ConvertPeopleListToString(t.TeamMembers) }");
+
+            }
+
+            File.WriteAllLines(fileName.FullFilePath(), lines);
+        }
+
+        private static string ConvertPeopleListToString(List<PersonModel> people)
+        {
+            string output = "";
+            
+            if (people.Count == 0)
+            {
+                return "";
+            }
+            // 2|4|5|6|
+            foreach(PersonModel p in people)
+            {
+                output +=$"{ p.id }|";
+            }
+            // usuń '|' z ostatniej osoby
+            output = output.Substring(0, output.Length - 1);
+
+            return output;
+        }
+
     }
 }
+
+
