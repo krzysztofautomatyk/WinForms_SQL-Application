@@ -145,5 +145,16 @@ namespace WinForms_SQL_Application
             }
             
         }
+
+        private void createTeamButton_Click(object sender, EventArgs e)
+        {
+            TeamModel t = new TeamModel();
+            t.TeamName = TeamNameValue.Text;
+            t.TeamMembers = selectedTeamMeambers;
+
+            t = GlobalConfig.Connection.CreateTeam(t);
+
+            // TODO - jeśli nie zamykamy okna po utworzeniu drużyny musimy je zrestować
+        }
     }
 }
