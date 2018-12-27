@@ -35,7 +35,6 @@
             this.torunamentNameValue = new System.Windows.Forms.TextBox();
             this.entryFeeLabel = new System.Windows.Forms.Label();
             this.torunamentPlayersListBox = new System.Windows.Forms.ListBox();
-            this.unplayedOnlyCheckbox = new System.Windows.Forms.CheckBox();
             this.selectTeamDropDown = new System.Windows.Forms.ComboBox();
             this.tournamentNameLabel = new System.Windows.Forms.Label();
             this.createTournamentLabel = new System.Windows.Forms.Label();
@@ -44,7 +43,7 @@
             this.torunamentPlayersLabel = new System.Windows.Forms.Label();
             this.deleteSelectedPlayerButton = new System.Windows.Forms.Button();
             this.deleteSelectedPrizeButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.prizesLabel = new System.Windows.Forms.Label();
             this.prizesListBox = new System.Windows.Forms.ListBox();
             this.createTournamentButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -119,20 +118,6 @@
             this.torunamentPlayersListBox.Name = "torunamentPlayersListBox";
             this.torunamentPlayersListBox.Size = new System.Drawing.Size(295, 122);
             this.torunamentPlayersListBox.TabIndex = 19;
-            // 
-            // unplayedOnlyCheckbox
-            // 
-            this.unplayedOnlyCheckbox.AutoSize = true;
-            this.unplayedOnlyCheckbox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.unplayedOnlyCheckbox.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.unplayedOnlyCheckbox.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.unplayedOnlyCheckbox.Location = new System.Drawing.Point(566, 17);
-            this.unplayedOnlyCheckbox.Margin = new System.Windows.Forms.Padding(2);
-            this.unplayedOnlyCheckbox.Name = "unplayedOnlyCheckbox";
-            this.unplayedOnlyCheckbox.Size = new System.Drawing.Size(191, 36);
-            this.unplayedOnlyCheckbox.TabIndex = 18;
-            this.unplayedOnlyCheckbox.Text = "Unplayed Only";
-            this.unplayedOnlyCheckbox.UseVisualStyleBackColor = true;
             // 
             // selectTeamDropDown
             // 
@@ -239,17 +224,17 @@
             this.deleteSelectedPrizeButton.Text = "Delete Selected";
             this.deleteSelectedPrizeButton.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // prizesLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label1.Location = new System.Drawing.Point(348, 244);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 37);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Team / Players";
+            this.prizesLabel.AutoSize = true;
+            this.prizesLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.prizesLabel.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.prizesLabel.Location = new System.Drawing.Point(348, 244);
+            this.prizesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.prizesLabel.Name = "prizesLabel";
+            this.prizesLabel.Size = new System.Drawing.Size(89, 37);
+            this.prizesLabel.TabIndex = 33;
+            this.prizesLabel.Text = "Prizes";
             // 
             // prizesListBox
             // 
@@ -287,7 +272,7 @@
             this.ClientSize = new System.Drawing.Size(868, 525);
             this.Controls.Add(this.createTournamentButton);
             this.Controls.Add(this.deleteSelectedPrizeButton);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.prizesLabel);
             this.Controls.Add(this.prizesListBox);
             this.Controls.Add(this.deleteSelectedPlayerButton);
             this.Controls.Add(this.torunamentPlayersLabel);
@@ -299,7 +284,6 @@
             this.Controls.Add(this.torunamentNameValue);
             this.Controls.Add(this.entryFeeLabel);
             this.Controls.Add(this.torunamentPlayersListBox);
-            this.Controls.Add(this.unplayedOnlyCheckbox);
             this.Controls.Add(this.selectTeamDropDown);
             this.Controls.Add(this.tournamentNameLabel);
             this.Controls.Add(this.createTournamentLabel);
@@ -319,7 +303,6 @@
         private System.Windows.Forms.TextBox torunamentNameValue;
         private System.Windows.Forms.Label entryFeeLabel;
         private System.Windows.Forms.ListBox torunamentPlayersListBox;
-        private System.Windows.Forms.CheckBox unplayedOnlyCheckbox;
         private System.Windows.Forms.ComboBox selectTeamDropDown;
         private System.Windows.Forms.Label tournamentNameLabel;
         private System.Windows.Forms.Label createTournamentLabel;
@@ -328,7 +311,7 @@
         private System.Windows.Forms.Label torunamentPlayersLabel;
         private System.Windows.Forms.Button deleteSelectedPlayerButton;
         private System.Windows.Forms.Button deleteSelectedPrizeButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label prizesLabel;
         private System.Windows.Forms.ListBox prizesListBox;
         private System.Windows.Forms.Button createTournamentButton;
     }
