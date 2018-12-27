@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace WinForms_SQL_Application
 {
-    public partial class CreateTournament : Form, IPrizeRequester
+    public partial class CreateTournament : Form, IPrizeRequester, ITeamRequester
     {
         List<TeamModel> avaliableTeams = GlobalConfig.Connection.GetTeam_All();
         List<TeamModel> selectedTeams = new List<TeamModel>();
@@ -72,6 +72,18 @@ namespace WinForms_SQL_Application
 
             selectedPrize.Add(model);
             WireUpList();
+        }
+
+        public void TeamComplete(TeamModel model)
+        {
+            selectedTeams.Add(model);
+            WireUpList();
+        }
+
+        private void createNewLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CreateTeam frm = new CreateTeam(this);
+            frm.Show();
         }
     }
 }

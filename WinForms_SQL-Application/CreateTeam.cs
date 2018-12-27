@@ -16,11 +16,13 @@ namespace WinForms_SQL_Application
     {
         private List<PersonModel> availbleTeamMeambers = GlobalConfig.Connection.GetPerson_All();
         private List<PersonModel> selectedTeamMeambers = new List<PersonModel>();
-
-        public CreateTeam()
+        private ITeamRequester callingForm;
+        
+        public CreateTeam(ITeamRequester caller)
         {
             InitializeComponent();
 
+            callingForm = caller;
             //CreateSimpleDemoData();
 
             WireUpList();
@@ -152,9 +154,12 @@ namespace WinForms_SQL_Application
             t.TeamName = TeamNameValue.Text;
             t.TeamMembers = selectedTeamMeambers;
 
-            t = GlobalConfig.Connection.CreateTeam(t);
+            GlobalConfig.Connection.CreateTeam(t);
 
-            // TODO - jeśli nie zamykamy okna po utworzeniu drużyny musimy je zrestować
+            // dodaje nowy obiekt i zwracam go do winfromsa głownego
+
+            callingForm.TeamComplete(t);
+            this.Close();
         }
     }
 }

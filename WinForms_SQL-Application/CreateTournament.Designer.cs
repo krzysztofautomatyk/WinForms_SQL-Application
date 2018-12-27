@@ -164,6 +164,7 @@
             this.createNewLinkLabel.TabIndex = 28;
             this.createNewLinkLabel.TabStop = true;
             this.createNewLinkLabel.Text = "Create Team";
+            this.createNewLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.createNewLinkLabel_LinkClicked);
             // 
             // createPrizeButton
             // 
