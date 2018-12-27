@@ -15,19 +15,44 @@ namespace WinForms_SQL_Application
     public partial class CreateTournament : Form
     {
         List<TeamModel> avaliableTeams = GlobalConfig.Connection.GetTeam_All();
+        List<TeamModel> selectedTeams = new List<TeamModel>();
+        List<PrizeModel> selectedPrize = new List<PrizeModel>();
+
 
         public CreateTournament()
         {
             InitializeComponent();
-            InitializeList();
+            WireUpList();
         }
 
-        private void InitializeList()
+        private void WireUpList()
         {
+            selectTeamDropDown.DataSource = null;
             selectTeamDropDown.DataSource = avaliableTeams;
             // Wstawiam nazwę z mojego modelu w "" traktuje jak zmienną
             selectTeamDropDown.DisplayMember = "TeamName";
+
+            torunamentTeamListBox.DataSource = null;
+            torunamentTeamListBox.DataSource = selectedTeams;
+            torunamentTeamListBox.DisplayMember = "TeamName";
+
+            prizesListBox.DataSource = null;
+            prizesListBox.DataSource = selectedPrize;
+            prizesListBox.DisplayMember = "PlaceName";
+
         }
 
+        private void addTeamButton_Click(object sender, EventArgs e)
+        {
+
+            TeamModel t = (TeamModel)selectTeamDropDown.SelectedItem;
+            if (t != null)
+            {
+                avaliableTeams.Remove(t);
+                selectedTeams.Add(t);
+
+                WireUpList();
+            }
+        }
     }
 }

@@ -34,7 +34,7 @@
             this.selectTeamLabel = new System.Windows.Forms.Label();
             this.torunamentNameValue = new System.Windows.Forms.TextBox();
             this.entryFeeLabel = new System.Windows.Forms.Label();
-            this.torunamentPlayersListBox = new System.Windows.Forms.ListBox();
+            this.torunamentTeamListBox = new System.Windows.Forms.ListBox();
             this.selectTeamDropDown = new System.Windows.Forms.ComboBox();
             this.tournamentNameLabel = new System.Windows.Forms.Label();
             this.createTournamentLabel = new System.Windows.Forms.Label();
@@ -63,6 +63,7 @@
             this.addTeamButton.TabIndex = 27;
             this.addTeamButton.Text = "Add Team";
             this.addTeamButton.UseVisualStyleBackColor = true;
+            this.addTeamButton.Click += new System.EventHandler(this.addTeamButton_Click);
             // 
             // entryFeeValue
             // 
@@ -107,17 +108,17 @@
             this.entryFeeLabel.TabIndex = 21;
             this.entryFeeLabel.Text = "Entry Fee";
             // 
-            // torunamentPlayersListBox
+            // torunamentTeamListBox
             // 
-            this.torunamentPlayersListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.torunamentPlayersListBox.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.torunamentPlayersListBox.FormattingEnabled = true;
-            this.torunamentPlayersListBox.ItemHeight = 30;
-            this.torunamentPlayersListBox.Location = new System.Drawing.Point(355, 99);
-            this.torunamentPlayersListBox.Margin = new System.Windows.Forms.Padding(2);
-            this.torunamentPlayersListBox.Name = "torunamentPlayersListBox";
-            this.torunamentPlayersListBox.Size = new System.Drawing.Size(295, 122);
-            this.torunamentPlayersListBox.TabIndex = 19;
+            this.torunamentTeamListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.torunamentTeamListBox.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.torunamentTeamListBox.FormattingEnabled = true;
+            this.torunamentTeamListBox.ItemHeight = 30;
+            this.torunamentTeamListBox.Location = new System.Drawing.Point(355, 99);
+            this.torunamentTeamListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.torunamentTeamListBox.Name = "torunamentTeamListBox";
+            this.torunamentTeamListBox.Size = new System.Drawing.Size(295, 122);
+            this.torunamentTeamListBox.TabIndex = 19;
             // 
             // selectTeamDropDown
             // 
@@ -283,7 +284,7 @@
             this.Controls.Add(this.selectTeamLabel);
             this.Controls.Add(this.torunamentNameValue);
             this.Controls.Add(this.entryFeeLabel);
-            this.Controls.Add(this.torunamentPlayersListBox);
+            this.Controls.Add(this.torunamentTeamListBox);
             this.Controls.Add(this.selectTeamDropDown);
             this.Controls.Add(this.tournamentNameLabel);
             this.Controls.Add(this.createTournamentLabel);
@@ -302,7 +303,7 @@
         private System.Windows.Forms.Label selectTeamLabel;
         private System.Windows.Forms.TextBox torunamentNameValue;
         private System.Windows.Forms.Label entryFeeLabel;
-        private System.Windows.Forms.ListBox torunamentPlayersListBox;
+        private System.Windows.Forms.ListBox torunamentTeamListBox;
         private System.Windows.Forms.ComboBox selectTeamDropDown;
         private System.Windows.Forms.Label tournamentNameLabel;
         private System.Windows.Forms.Label createTournamentLabel;
