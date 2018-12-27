@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace WinForms_SQL_Application
 {
-    public partial class CreateTournament : Form
+    public partial class CreateTournament : Form, IPrizeRequester
     {
         List<TeamModel> avaliableTeams = GlobalConfig.Connection.GetTeam_All();
         List<TeamModel> selectedTeams = new List<TeamModel>();
@@ -53,6 +53,25 @@ namespace WinForms_SQL_Application
 
                 WireUpList();
             }
+        }
+
+        private void createPrizeButton_Click(object sender, EventArgs e)
+        {
+            // Wywołaj CreatePrize Winforms
+            // słowo this
+            CreatePrize frm = new CreatePrize(this);
+            frm.Show();
+            
+
+        }
+
+        public void PrizeComlete(PrizeModel model)
+        {
+            // Otrzymaj dane z powrotem z PrizeModel
+            // Skorzystaj z modelu PrizeModel i dodaj go listy z Prizem:)
+
+            selectedPrize.Add(model);
+            WireUpList();
         }
     }
 }

@@ -180,6 +180,7 @@
             this.createPrizeButton.TabIndex = 29;
             this.createPrizeButton.Text = "Create Prize";
             this.createPrizeButton.UseVisualStyleBackColor = true;
+            this.createPrizeButton.Click += new System.EventHandler(this.createPrizeButton_Click);
             // 
             // torunamentPlayersLabel
             // 

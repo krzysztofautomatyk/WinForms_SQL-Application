@@ -15,29 +15,35 @@ namespace WinForms_SQL_Application
 {
     public partial class CreatePrize : Form
     {
-        public CreatePrize()
+        IPrizeRequester callingForm;
+
+        public CreatePrize(IPrizeRequester caller)
         {
             InitializeComponent();
+
+            callingForm = caller;
         }
 
         private void createPrizeButton_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
             {
-                    PrizeModel model = new PrizeModel(
-                    placeNameValue.Text,
-                    placeNumberValue.Text,
-                    PrizeAmountValue.Text,
-                    prizePercentageValue.Text);
-
-
-                    GlobalConfig.Connection.CreatePrize(model);
-
+                PrizeModel model = new PrizeModel(
+                placeNameValue.Text,
+                placeNumberValue.Text,
+                PrizeAmountValue.Text,
+                prizePercentageValue.Text);
                 
-                    placeNameValue.Text = "";
-                    placeNumberValue.Text = "";
-                    PrizeAmountValue.Text = "0";
-                    prizePercentageValue.Text = "0";
+                GlobalConfig.Connection.CreatePrize(model);
+
+                //zwraca model z Winformcsa
+                callingForm.PrizeComlete(model);
+                this.Close();
+
+                //placeNameValue.Text = "";
+                //placeNumberValue.Text = "";
+                //PrizeAmountValue.Text = "0";
+                //prizePercentageValue.Text = "0";
 
 
             }
