@@ -122,7 +122,7 @@ namespace ConnectionLibrary.DataAccess.TextHelpers
                 //    p.PlaceName = cols[2];
                 //    p.PrizeAmount = decimal.Parse(cols[3]);
                 //    p.PrizePercentage = double.Parse(cols[4]);
-                //    output.Add(p);
+                output.Add(t);
             }
 
             return output;
