@@ -111,5 +111,39 @@ namespace WinForms_SQL_Application
                 WireUpList();
             }
         }
+
+        private void createTournamentButton_Click(object sender, EventArgs e)
+        {
+            // Walidacja danych
+            decimal fee = 0;
+
+            //spróbuj przekonwertować zmienną i zapisz ją jeśi sie uda do fee
+            bool feeAcceptable = decimal.TryParse(entryFeeValue.Text, out fee);
+            if(!feeAcceptable)
+            {
+                MessageBox.Show("You need to enter a valid Entry fee","Błędny opis",MessageBoxButtons.OK);
+                // Oznacza wyjście z tego przycisku
+                return;
+            }
+            
+            
+            // Utworzenie modelu tournament
+            TournamentModel tm = new TournamentModel();
+
+            tm.TournamentName = tournamentNameLabel.Text;
+            tm.EntryFee = fee;
+
+            //foreach (PrizeModel prize in selectedPrize)
+            //{
+            //    tm.Prizes.Add(prize);
+            //}
+
+            tm.Prizes = selectedPrize;
+            tm.EnteredTeams = selectedTeams;
+
+            // Utworzenie turnieju wejście
+            // Utworzenie wszystkich kwot
+            // Utworzenie wszystkich drużyn
+        }
     }
 }
