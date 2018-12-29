@@ -156,8 +156,118 @@ namespace ConnectionLibrary.DataAccess.TextHelpers
 
                 string[] prizesIds = cols[4].Split('|');
 
+                foreach (string id in prizesIds)
+                {
+                    tm.Prizes.Add(prizes.Where(x => x.id == int.Parse(id)).First());
+                }
+
+                // TODO Capture Raounds information
+
+
+
+                output.Add(tm);          
             }
+            return output;
         }
+        //SaveToTournamentFile
+        public static void SaveToTournamentFile(this List<TournamentModel> models, string fileName)
+        {
+            List<string> lines = new List<string>();
+
+            foreach (TournamentModel tm in models)
+            {
+                // $@" -> pozwala na łamanie wierszy w kodzie
+                lines.Add($@"
+                {tm.Id},
+                {tm.TournamentName},
+                {tm.EntryFee},
+                {ConvertTeamListToString(tm.EnteredTeams)},
+                {ConvertPrizeListToString(tm.Prizes)},
+                {ConvertRoundListToString(tm.Rounds)},
+                {ConvertRoundListToString(tm.Rounds)},
+                ");
+
+            }
+
+            File.WriteAllLines(fileName.FullFilePath(), lines);
+        }
+        private static string ConvertRoundListToString(List<List<MatchupModel>> rounds)
+        {
+            // (rounds - id^id^id|id^id^id|id^id^id|)
+            string output = "";
+
+            if (rounds.Count == 0)
+            {
+                return "";
+            }
+            // 2|4|5|6|
+            foreach ( List<MatchupModel> r in rounds)
+            {
+                output += $"{ ConvertMatchupListToString(r) }|";
+            }
+            // usuń '|' z ostatniej osoby
+            output = output.Substring(0, output.Length - 1);
+
+            return output;
+        }
+
+        private static string ConvertMatchupListToString(List<MatchupModel> matchups)
+        {
+            string output = "";
+
+            if (matchups.Count == 0)
+            {
+                return "";
+            }
+            // 2|4|5|6|
+            foreach (MatchupModel m in matchups)
+            {
+                output += $"{m.id }^";
+            }
+            // usuń '|' z ostatniej osoby
+            output = output.Substring(0, output.Length - 1);
+
+            return output;
+        }
+
+        private static string ConvertPrizeListToString(List<PrizeModel> prizes)
+        {
+            string output = "";
+
+            if (prizes.Count == 0)
+            {
+                return "";
+            }
+            // 2|4|5|6|
+            foreach (PrizeModel p in prizes)
+            {
+                output += $"{ p.id }|";
+            }
+            // usuń '|' z ostatniej osoby
+            output = output.Substring(0, output.Length - 1);
+
+            return output;
+        }
+
+        private static string ConvertTeamListToString(List<TeamModel> teams)
+        {
+            string output = "";
+
+            if (teams.Count == 0)
+            {
+                return "";
+            }
+            // 2|4|5|6|
+            foreach (TeamModel t in teams)
+            {
+                output += $"{ t.Id }|";
+            }
+            // usuń '|' z ostatniej osoby
+            output = output.Substring(0, output.Length - 1);
+
+            return output;
+        }
+
         public static void SaveToTeamFile(this List<TeamModel> models, string fileName)
         {
             List<string> lines = new List<string>();

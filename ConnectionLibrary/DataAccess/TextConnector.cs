@@ -82,13 +82,24 @@ namespace ConnectionLibrary.DataAccess
             return model;
         }
 
-        public TournamentModel CreateTournament(TournamentModel model)
+        public void CreateTournament(TournamentModel model)
         {
             List<TournamentModel> tournaments = TournamentFile
                 .FullFilePath()
                 .LoadFile().
                 ConvertToTournamentModels(TeamFile,PeopleFile,PrizeFile);
 
+            int currenId = 1;
+            if (tournaments.Count > 0)
+            {
+                currenId = tournaments.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+
+            model.Id = currenId;
+            tournaments.Add(model);
+
+            tournaments.SaveToTournamentFile(TournamentFile);
+     
         }
 
         public List<PersonModel> GetPerson_All()
@@ -101,5 +112,7 @@ namespace ConnectionLibrary.DataAccess
             return TeamFile.FullFilePath().LoadFile().ConvertToTeamModel(PeopleFile);
 
         }
+
+
     }
 }

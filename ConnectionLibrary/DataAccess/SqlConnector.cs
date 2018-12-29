@@ -96,7 +96,7 @@ namespace ConnectionLibrary.DataAccess
             }
         }
 
-        public TournamentModel CreateTournament(TournamentModel model)
+        public void CreateTournament(TournamentModel model)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
@@ -104,7 +104,7 @@ namespace ConnectionLibrary.DataAccess
                 SaveTournamentEntries(connection, model);
                 SaveTournamentPrizes(connection, model);
                 
-                return model;
+                 
             }
         }
 
@@ -189,17 +189,11 @@ namespace ConnectionLibrary.DataAccess
             return output;
 
         }
+
+ 
     }
 
-        public List<PersonModel> GetPerson_All()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<TeamModel> GetTeam_All()
-        {
-            throw new NotImplementedException();
-        }
+         
     }
 
 
