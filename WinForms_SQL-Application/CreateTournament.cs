@@ -141,9 +141,15 @@ namespace WinForms_SQL_Application
             tm.Prizes = selectedPrize;
             tm.EnteredTeams = selectedTeams;
 
+            // Utworzenie wszystkich drużyn
+
+
+
             // Utworzenie turnieju wejście
             // Utworzenie wszystkich kwot
-            // Utworzenie wszystkich drużyn
+
+            GlobalConfig.Connection.CreateTournament(tm);
+
         }
     }
 }

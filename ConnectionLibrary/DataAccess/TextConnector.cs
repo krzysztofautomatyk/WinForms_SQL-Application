@@ -13,6 +13,7 @@ namespace ConnectionLibrary.DataAccess
         private const string PrizeFile = "PrizeModel.csv";
         private const string PeopleFile = "PersonModel.csv";
         private const string TeamFile = "TeamModel.csv";
+        private const string TournamentFile = "TournamentModel.csv";
 
         public PersonModel CreatePerson(PersonModel model)
         {
@@ -83,7 +84,11 @@ namespace ConnectionLibrary.DataAccess
 
         public TournamentModel CreateTournament(TournamentModel model)
         {
-            throw new NotImplementedException();
+            List<TournamentModel> tournaments = TournamentFile
+                .FullFilePath()
+                .LoadFile().
+                ConvertToTournamentModels(TeamFile,PeopleFile,PrizeFile);
+
         }
 
         public List<PersonModel> GetPerson_All()
